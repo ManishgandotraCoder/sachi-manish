@@ -64,58 +64,6 @@ const ContactComponent = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" })); // Clear errors on change
   };
 
-  const sendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const fieldErrors = validateFields();
-    if (Object.keys(fieldErrors).length > 0) {
-      setErrors(fieldErrors);
-      return;
-    }
-
-    try {
-      // Dummy success response simulation
-      const accountSid = "AC65721a3910c03fa33b61c6c5555b93df"; // Replace with your actual SID
-      const authToken = "184ea91533099596b4b4c87932cf684f"; // Replace with your actual Auth Token
-      const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
-
-      const data = new URLSearchParams();
-      data.append("To", "+918800463103");
-      data.append("From", "+12085563949");
-      data.append(
-        "Body",
-        `Hi, my name is ${fields.name} (${fields.phone}, ${fields.email}). I want to connect for ${fields.message}`
-      );
-
-      const response = await fetch(url, {
-        method: "POST",
-        body: data,
-        headers: {
-          Authorization: `Basic ${btoa(`${accountSid}:${authToken}`)}`,
-        },
-      });
-
-      if (response.ok) {
-        await response.json();
-        setSuccessMessage(
-          "Message sent successfully. We will reach you within the next 24 hours. Thank you!"
-        );
-        setFields({
-          name: "",
-          message: "",
-          email: "",
-          phone: "",
-          subject: "",
-        }); // Clear form fields
-      } else {
-        setSuccessMessage("");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setSuccessMessage("");
-    }
-  };
-
   return (
     <div
       className="white-version rn-contact-area rn-section-gap section-separator responsive-padding"
@@ -190,7 +138,7 @@ const ContactComponent = () => {
           <div className="col-md-8">
             <div className="contact-input" data-aos-delay="600">
               <div className="contact-form-wrapper">
-                <form onSubmit={sendMessage} className="contact-form">
+                <form className="contact-form">
                   {/* Name */}
                   <div className="form-group">
                     <label htmlFor="contact-name">Your Name</label>
