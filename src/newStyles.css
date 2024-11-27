@@ -1,0 +1,207 @@
+.color {
+  color: #ff014f;
+}
+.background {
+  background-color: #ff014f;
+}
+.textleft {
+  text-align: left;
+}
+.limited-text-four {
+  display: -webkit-box;
+  cursor: pointer;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  line-height: 1.5; /* Adjust line height if needed */
+  max-height: calc(
+    1.5em * 4
+  ); /* Calculate max height based on line height and number of lines */
+  text-overflow: ellipsis;
+}
+.cursoring {
+  cursor: pointer;
+}
+.footer_item_text {
+  color: green;
+  cursor: pointer;
+}
+.footer_item_text :hover {
+  color: #ff014f;
+  cursor: pointer;
+}
+.rm-shadow {
+  box-shadow: none;
+}
+.main-bg {
+  background-image: url("../public/main/manish_profile.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/* Mobile-specific background style */
+@media only screen and (max-width: 768px) {
+  .main-bg {
+    background-image: url("../public/main/manish-mobile.png");
+  }
+}
+.mid-bg {
+  background-color: rgba(0, 0, 0, 0.707);
+  height: 100vh;
+  width: 100vw;
+}
+/* Mobile-specific background style */
+
+.mid-bg {
+  background-color: rgba(0, 0, 0, 0.707);
+  height: 100vh;
+  width: 100vw;
+}
+.title {
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 2rem; /* Base font size */
+  line-height: 1.5; /* Improved readability */
+  margin: 20px 0;
+}
+
+.title span {
+  display: block; /* Ensure each line is treated as a block */
+  margin-bottom: 10px; /* Add spacing between lines */
+}
+
+.title .highlight {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .title span {
+    margin-bottom: 8px; /* Reduce spacing on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem; /* Further reduce font size for very small screens */
+    text-align: left;
+  }
+
+  .title span {
+    margin-bottom: 6px; /* Further reduce spacing */
+  }
+}
+pre {
+  background-color: white;
+}
+
+.notesImage {
+  height: 400px;
+  object-fit: cover;
+}
+
+.head-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* sidebar` */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Sidebar for Mobile */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  /* color: white; */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease-in-out;
+}
+
+.mobile-sidebar.active {
+  z-index: 9999;
+  position: fixed;
+  content: "";
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  color: #333;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+}
+
+.mobile-sidebar .close-button {
+  font-size: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.mobile-sidebar ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.mobile-sidebar ul li {
+  margin: 15px 0;
+}
+
+.mobile-sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.mobile-sidebar ul li a:hover {
+  color: #ff014f;
+}
+
+/* Content Area */
+.content {
+  margin-top: 40px; /* Space for fixed topbar */
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}

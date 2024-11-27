@@ -1,0 +1,66 @@
+export const experiences = [
+  {
+    name: "TERMGRID",
+    designation: "TECHNICAL LEAD",
+    duration: "FEB 2024 - Present",
+    rolesAndResponsibilities: [
+      "Developed a robust debt management module using React.js, efficiently handling over 1 million records, enhancing system scalability by 40%.",
+      "Implemented a comprehensive suite of testing procedures (unit, integration, and end-to-end), reducing software bugs by 20% and boosting user satisfaction by 15%.",
+      "Conducted performance tuning, improving load times by 30% and reducing server response time by 25%.",
+      "Led Agile project progress as Scrum Master, boosting team productivity by 30% through effective sprint planning and backlog management.",
+      "Integrated a CI/CD pipeline using Jenkins and Docker, decreasing deployment time by 40% and ensuring continuous delivery of high-quality code.",
+      "Collaborated with the UX/UI team to redesign key user interfaces, resulting in a 25% increase in user engagement and a 10% reduction in bounce rates.",
+      "Led the migration of legacy systems to microservices architecture, reducing technical debt by 35% and improving system maintainability.",
+    ],
+  },
+  {
+    name: "DELOITTE",
+    designation: "DC CONSULTANT",
+    duration: "Jul 2022 - FEB 2024",
+    rolesAndResponsibilities: [
+      "Engineered the ‘Type Save’ feature, leveraging advanced cache memory optimization techniques to enhance website performance by 50%, leading to faster page loads and improved user experience.",
+      "Led the deployment of cloud infrastructure on AWS, increasing scalability and reliability by 40%, supporting the seamless handling of increased traffic and data loads.",
+      "Optimized the deployment pipeline on Heroku, reducing deployment time by 30%, and introduced automated monitoring and rollback mechanisms to minimize downtime.",
+      "Spearheaded Git version control management, implementing advanced branching strategies that improved project delivery timelines by 25% and reduced merge conflicts by 20%.",
+      "Mentored junior developers and conducted knowledge-sharing sessions, fostering a culture of continuous learning and improving the overall technical proficiency of the team.",
+    ],
+  },
+  {
+    name: "COGNIZANT",
+    designation: "ASSOCIATE PROJECTS",
+    duration: "May 2021 - Jul 2022",
+    rolesAndResponsibilities: [
+      "Designed and implemented a high-performance website using React, Node.js, Nest.js, and GraphQL, enabling real-time tracking of over 5000 websites, which improved decision-making efficiency by 27%.",
+      "Automated email and ticket generation systems integrated with Okta Authentication, reducing resolution time by 40% and enhancing security by 15%.",
+      "Deployed serverless applications using AWS Lambda, resulting in a 50% reduction in server costs and improved response times for user queries.",
+      "Conducted code audits and refactoring sessions, improving code quality by 25% and reducing the number of post-release bugs by 30%.",
+      "Partnered with the DevOps team to implement containerization strategies using Docker and Kubernetes, enhancing deployment flexibility and environment consistency.",
+    ],
+  },
+  {
+    name: "INTELIZIGN ENGINEERING SERVICES",
+    designation: "SOFTWARE ENGINEER",
+    duration: "Aug 2020 - Apr 2021",
+    rolesAndResponsibilities: [
+      "Conceptualized and built a real-time job portal using React.js, TypeORM, and Node.js, incorporating features like multi-role management and task handling, improving platform efficiency by 20%.",
+      "Implemented clustering techniques to distribute workloads across multiple Node.js instances, achieving up to a 40% increase in response speed and system reliability.",
+      "Designed and deployed a microservices architecture, ensuring high scalability, resilience, and maintainability, leading to a 30% increase in system speed and reduced downtime.",
+      "Integrated third-party APIs to enhance the job portal's functionality, resulting in a 15% increase in user retention and engagement.",
+      "Conducted stress testing and performance analysis, identifying bottlenecks and optimizing system performance by 25%.",
+      "Spearheaded the adoption of Agile methodologies within the team, leading to a 20% reduction in project delivery times and improved collaboration.",
+    ],
+  },
+  {
+    name: "NATIONAL INFORMATICS CENTER",
+    designation: "SOFTWARE APPLICATION ENGINEER",
+    duration: "Jun 2017 - Apr 2020",
+    rolesAndResponsibilities: [
+      "Led the development of a government bill management system using React.js and Node.js, streamlining operations and reducing processing costs by 30%.",
+      "Enhanced complex SQL queries for bill creation and validation processes, improving transparency and decision-making efficiency by 25%.",
+      "Introduced a modular-based front-end architecture, facilitating easier scalability and maintainability, resulting in a 40% reduction in adaptation time for new features.",
+      "Implemented role-based access control (RBAC) to enhance the security of the bill management system, reducing unauthorized access incidents by 15%.",
+      "Developed comprehensive documentation and user manuals, improving onboarding efficiency for new users and reducing support requests by 20%.",
+      "Collaborated with government stakeholders to gather requirements and deliver customized solutions, improving overall client satisfaction by 30%",
+    ],
+  },
+];

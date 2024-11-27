@@ -1,0 +1,48 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Equivalent to spacing={2} */
+}
+
+.grid-item {
+  flex: 1 1 calc(100% - 32px); /* Full width minus the gap on small screens */
+}
+
+@media (min-width: 600px) {
+  .grid-item {
+    flex: 1 1 calc(50% - 32px); /* Half width minus the gap */
+  }
+}
+
+@media (min-width: 960px) {
+  .grid-item {
+    flex: 1 1 calc(33.33% - 32px); /* One-third width minus the gap */
+  }
+}
+
+.rn-service {
+  background: #f4f4f4; /* Example background */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5em;
+  margin: 0 0 8px;
+}
+
+.description {
+  font-size: 1em;
+  color: #666;
+}
