@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "build": "tsc",
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev src/server.ts",
+    "postbuild": "chmod +x bin/postbuild.sh && ./bin/postbuild.sh"
   },
   "keywords": [],
   "author": "",

@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 /dist
 /apis/.env
+/apis/.amplify-hosting
