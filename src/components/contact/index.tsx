@@ -12,51 +12,78 @@ const ContactComponent = () => {
     subject: "",
   });
 
-  // const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // const validateFields = () => {
-  //   const newErrors: Record<string, string> = {};
+  const validateFields = () => {
+    const newErrors: Record<string, string> = {};
 
-  //   // Name validation
-  //   if (!fields.name.trim()) {
-  //     newErrors.name = "Name is required.";
-  //   } else if (fields.name.length < 2) {
-  //     newErrors.name = "Name must be at least 2 characters.";
-  //   }
+    // Name validation
+    if (!fields.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (fields.name.length < 2) {
+      newErrors.name = "Name must be at least 2 characters.";
+    }
 
-  //   // Phone validation
-  //   if (!fields.phone.trim()) {
-  //     newErrors.phone = "Phone number is required.";
-  //   } else if (!/^\d{10}$/.test(fields.phone)) {
-  //     newErrors.phone = "Phone number must be 10 digits.";
-  //   }
+    // Phone validation
+    if (!fields.phone.trim()) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(fields.phone)) {
+      newErrors.phone = "Phone number must be 10 digits.";
+    }
 
-  //   // Email validation
-  //   if (!fields.email.trim()) {
-  //     newErrors.email = "Email is required.";
-  //   } else if (
-  //     !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(fields.email)
-  //   ) {
-  //     newErrors.email = "Please enter a valid email.";
-  //   }
+    // Email validation
+    if (!fields.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (
+      !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(fields.email)
+    ) {
+      newErrors.email = "Please enter a valid email.";
+    }
 
-  //   // Subject validation
-  //   if (!fields.subject.trim()) {
-  //     newErrors.subject = "Subject is required.";
-  //   } else if (fields.subject.length < 3) {
-  //     newErrors.subject = "Subject must be at least 3 characters.";
-  //   }
+    // Subject validation
+    if (!fields.subject.trim()) {
+      newErrors.subject = "Subject is required.";
+    } else if (fields.subject.length < 3) {
+      newErrors.subject = "Subject must be at least 3 characters.";
+    }
 
-  //   // Message validation
-  //   if (!fields.message.trim()) {
-  //     newErrors.message = "Message is required.";
-  //   } else if (fields.message.length < 10) {
-  //     newErrors.message = "Message must be at least 10 characters.";
-  //   }
+    // Message validation
+    if (!fields.message.trim()) {
+      newErrors.message = "Message is required.";
+    } else if (fields.message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters.";
+    }
 
-  //   return newErrors;
-  // };
+    return newErrors;
+  };
+  const sendMessage = async (e: any) => {
+    e.preventDefault(); // Prevent page reload
+    const validationErrors = validateFields();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Message sent successfully!");
+        setFields({ name: "", message: "", email: "", phone: "", subject: "" });
+      } else {
+        setErrors({
+          general: "Failed to send message. Please try again later.",
+        });
+      }
+    } catch (error) {
+      setErrors({ general: "An error occurred. Please try again later." });
+    }
+  };
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -138,7 +165,7 @@ const ContactComponent = () => {
           <div className="col-md-8">
             <div className="contact-input" data-aos-delay="600">
               <div className="contact-form-wrapper">
-                <form className="contact-form">
+                <form className="contact-form" onSubmit={sendMessage}>
                   {/* Name */}
                   <div className="form-group">
                     <label htmlFor="contact-name">Your Name</label>
@@ -213,13 +240,13 @@ const ContactComponent = () => {
                   </div>
 
                   {/* Submit Button */}
-                  {/* <button type="submit" className="rn-btn">
+                  <button type="submit" className="rn-btn">
                     SEND MESSAGE
-                  </button> */}
+                  </button>
                   {/* Success Message */}
-                  {/* {successMessage && ( */}
-                  {/* <p className="success-msg">{successMessage}</p> */}
-                  {/* )} */}
+                  {successMessage && (
+                    <p className="success-msg">{successMessage}</p>
+                  )}
                 </form>
               </div>
             </div>{" "}
