@@ -73,7 +73,7 @@ const ContactComponent = () => {
       });
 
       if (response.ok) {
-        setSuccessMessage("Message sent successfully!");
+        setSuccessMessage("Thanks for connecting , we will reach you shortly!");
         setFields({ name: "", message: "", email: "", phone: "", subject: "" });
       } else {
         setErrors({
