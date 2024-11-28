@@ -23,16 +23,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.SENDER_PASSWORD, // Replace with your email password or app-specific password
   },
 });
-console.log({
-  host: "smtp.gmail.com", // Gmail's SMTP server
-  port: 465, // Secure port for SSL
-  secure: true, // Use SSL
-  service: "gmail", // You can use other email services like Yahoo, Outlook, etc.
-  auth: {
-    user: process.env.SENDER_EMAIL, // Replace with your email
-    pass: process.env.SENDER_PASSWORD, // Replace with your email password or app-specific password
-  },
-});
 
 app.post("/send-email", (req: Request, res: Response): void => {
   const {
@@ -80,7 +70,9 @@ app.post("/send-email", (req: Request, res: Response): void => {
     res.status(200).json({ message: "Email sent successfully", info });
   });
 });
-
+app.get("/", (req: Request, res: Response): void => {
+  res.send("Welcome to Manish Gandotra testing domain");
+});
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
