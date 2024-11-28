@@ -217,9 +217,9 @@ const ContactComponent = () => {
                     SEND MESSAGE
                   </button> */}
                   {/* Success Message */}
-                  {successMessage && (
-                    <p className="success-msg">{successMessage}</p>
-                  )}
+                  {/* {successMessage && ( */}
+                  {/* <p className="success-msg">{successMessage}</p> */}
+                  {/* )} */}
                 </form>
               </div>
             </div>{" "}
